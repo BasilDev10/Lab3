@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Store {
-    private ArrayList<User> users;
+    private ArrayList<User> users = new ArrayList<User>();
     private ArrayList<Media> media = new ArrayList<Media>();
     public Store() {
 
@@ -29,6 +29,16 @@ public class Store {
             }
         }
         return book;
+    }
+
+    public <T extends Media> ArrayList<T> getMediaByType(Class<T> type) {
+        ArrayList<T> result = new ArrayList<>();
+        for (Media media : media) {
+            if (type.isInstance(media)) {
+                result.add(type.cast(media));
+            }
+        }
+        return result;
     }
 
 }

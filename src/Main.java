@@ -18,7 +18,6 @@ public class Main {
         movies.add(movie2);
         movies.add(movie3);
 
-        System.out.println(movie2.recommendSimilarMovies(movies));
 
 
         store.addMedia(movie1);
@@ -69,8 +68,11 @@ public class Main {
         store.addMedia(academicBook1);
         store.addMedia(academicBook2);
 
-        //System.out.println(store.displayMedia());
-     //   System.out.println(store);
+
+
+        ArrayList<Movie> movielist = store.getMediaByType(Movie.class);
+        
+
 
 
     }

@@ -22,7 +22,8 @@ public class User {
         shoppingCart.remove(media);
     }
     public void checkOut(){
-        purchaseMediaList = shoppingCart;
+        purchaseMediaList.addAll(shoppingCart);
+        shoppingCart.clear();
     }
     public ArrayList<Media> getPurchaseMediaList() {
         return purchaseMediaList;
