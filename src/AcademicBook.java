@@ -4,8 +4,8 @@ public class AcademicBook extends Book {
     public AcademicBook(){
 
     }
-    public AcademicBook(String title, String auteur, String ISBN, double price, String subject) {
-        super(title, auteur, ISBN, price);
+    public AcademicBook(String title, String auteur, String ISBN, double price,int stocks,int pageCount, String subject) {
+        super(title, auteur, ISBN, price, stocks,pageCount);
         this.subject = subject;
     }
     public void setSubject(String subject){
@@ -21,6 +21,6 @@ public class AcademicBook extends Book {
     }
     @Override
     public String toString() {
-        return super.toString() + " Subject: " + subject;
+        return super.toString() + "\nSubject: " + subject;
     }
 }

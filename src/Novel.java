@@ -3,8 +3,8 @@ public class Novel extends Book {
     public Novel() {
 
     }
-    public Novel(String title, String auteur, String ISBN, double price, String genre) {
-        super(title, auteur, ISBN, price);
+    public Novel(String title, String auteur, String ISBN, double price,int stocks,int pageCount, String genre) {
+        super(title, auteur, ISBN, price, stocks ,pageCount);
         this.genre = genre;
     }
     public void setGenre(String genre) {
@@ -20,6 +20,6 @@ public class Novel extends Book {
     }
     @Override
     public String toString() {
-        return super.toString() + " Genre: " + genre;
+        return super.toString() + "\nGenre: " + genre;
     }
 }

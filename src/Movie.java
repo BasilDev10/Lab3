@@ -5,8 +5,8 @@ public class Movie extends Media{
     public Movie(){
 
     }
-    public Movie(String title, String auteur, String ISBN, double price, int duration){
-        super(title, auteur, ISBN, price);
+    public Movie(String title, String auteur, String ISBN, double price,int stocks, int duration){
+        super(title, auteur, ISBN, price, stocks);
         this.duration = duration;
     }
     public int getDuration(){

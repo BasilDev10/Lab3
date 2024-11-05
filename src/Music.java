@@ -5,8 +5,8 @@ public class Music extends Media {
     public Music(){
 
     }
-    public Music(String title, String auteur, String ISBN, double price , String artist) {
-        super(title, auteur, ISBN, price);
+    public Music(String title, String auteur, String ISBN, double price,int stocks , String artist) {
+        super(title, auteur, ISBN, price, stocks);
         this.artist = artist;
     }
     public void setArtist(String artist) {

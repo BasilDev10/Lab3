@@ -16,11 +16,16 @@ public class User {
         return shoppingCart;
     }
     public void addToCart(Media media){
-        shoppingCart.add(media);
+        if(media.purchase().equals("Done")){
+            shoppingCart.add(media);
+        }
+
     }
     public void removeFromCart(Media media){
         shoppingCart.remove(media);
+        media.restock(1);
     }
+
     public void checkOut(){
         purchaseMediaList.addAll(shoppingCart);
         shoppingCart.clear();
