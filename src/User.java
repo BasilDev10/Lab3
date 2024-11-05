@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class User {
     private String username;
     private String email;
-    private ArrayList<Media>  purchaseMediaList;
-    private ArrayList<Media> shoppingCart;
+    private ArrayList<Media>  purchaseMediaList = new ArrayList<>();
+    private ArrayList<Media> shoppingCart = new ArrayList<>();
     public User(){
 
     }

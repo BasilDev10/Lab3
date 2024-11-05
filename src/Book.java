@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Book extends Media{
     private int stock;
-    private ArrayList<Review> review;
+    private ArrayList<Review> review = new ArrayList<>();
 
     public Book(){
 
@@ -42,7 +42,7 @@ public class Book extends Media{
     }
     @Override
     public String getMediaType(){
-        return this.isBestseller() == true ? "Bestselling book":"Bool";
+        return this.isBestseller() == true ? "Bestselling book":"Book";
     }
     @Override
     public String toString(){

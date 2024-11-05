@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -70,8 +71,101 @@ public class Main {
 
 
 
-        ArrayList<Movie> movielist = store.getMediaByType(Movie.class);
-        
+      //  ArrayList<Movie> movielist = store.getMediaByType(Movie.class);
+
+        Scanner input = new Scanner(System.in);
+
+        User user = new User();
+        System.out.println("Enter username: ");
+        user.setUsername(input.nextLine());
+        System.out.println("Enter Email: ");
+        user.setEmail(input.nextLine());
+        System.out.println("Welcome to media store");
+        do{
+            System.out.println("Type number to enter media \n1. Book \n2. Movie \n3. Music \n4. Novel \n5. Academic Book \n6. Exit");
+            int userInput = input.nextInt();
+            switch (userInput){
+                case 1:
+                    ArrayList<Book> booklist = store.getMediaByType(Book.class);
+                    for(Book book: booklist){
+                        System.out.println(book+"\n"+book.getMediaType());
+                    }
+                    System.out.println("Type book you want to add cart: ");
+                    String ISBN = input.next();
+                    for(Book book: booklist){
+                        if (book.getISBN().equals(ISBN)){
+                            user.addToCart(book);
+                        }
+                    }
+                    break;
+                    case 2:
+                    ArrayList<Movie> movielist = store.getMediaByType(Movie.class);
+                    for(Movie movie: movielist){
+                        System.out.println(movie+"\n"+movie.getMediaType());
+                    }
+                    System.out.println("Type movie you want to add cart: ");
+                    String ISBN2 = input.next();
+                    for(Movie movie: movielist){
+                        if (movie.getISBN().equals(ISBN2)){
+                            user.addToCart(movie);
+                        }
+                    }
+                    break;
+                    case 3:
+                    ArrayList<Music> musiclist = store.getMediaByType(Music.class);
+                    for(Music music: musiclist){
+                        System.out.println(music+"\n"+music.getMediaType());
+                    }
+                    System.out.println("Type music you want to add cart: ");
+                    String ISBN3 = input.next();
+                    for(Music music: musiclist){
+                        if (music.getISBN().equals(ISBN3)){
+                            user.addToCart(music);
+                        }
+                    }
+                    break;
+                    case 4:
+                    ArrayList<Novel> novellist = store.getMediaByType(Novel.class);
+                    for(Novel novel: novellist){
+                        System.out.println(novel+"\n"+novel.getMediaType());
+                    }
+                    System.out.println("Type novel you want to add cart: ");
+                    String ISBN4 = input.next();
+                    for(Novel novel: novellist){
+                        if (novel.getISBN().equals(ISBN4)){
+                            user.addToCart(novel);
+                        }
+                    }
+                    break;
+                    case 5:
+                    ArrayList<AcademicBook> academicbooklist = store.getMediaByType(AcademicBook.class);
+                    for(AcademicBook academicbook: academicbooklist){
+                        System.out.println(academicbook+"\n"+academicbook.getMediaType());
+                    }
+                    System.out.println("Type academic book you want to add cart: ");
+                    String ISBN5 = input.next();
+                    for(AcademicBook academicbook: academicbooklist){
+                        if (academicbook.getISBN().equals(ISBN5)){
+                            user.addToCart(academicbook);
+                        }
+                    }
+                    break;
+                    case 6:
+                    System.out.println("Thank you for using our service");
+                    break;
+            }
+            System.out.println("Shooing Cart :"+user.getShoppingCart());
+            if(userInput == 6){
+                break;
+            }
+        }while(true);
+
+        store.addUser(user);
+
+        store.displayUser();
+        store.displayMedia();
+
+        System.out.println(user.getPurchaseMediaList());
 
 
 
